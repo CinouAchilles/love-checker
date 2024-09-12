@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
         const middleRect = middle.getBoundingClientRect();
         const noBtnRect = no_btn.getBoundingClientRect();
       
-        // Calculate max positions to ensure the button stays within the wrapper
         const maxX = middleRect.width - noBtnRect.width;
         const maxY = middleRect.height - noBtnRect.height;
       
@@ -38,9 +37,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     
     yes_btn.addEventListener("click", (event)=>{
-        const numberOfStars = 30; // Number of stars
+        const numberOfStars = 30; 
         for (let i = 0; i < numberOfStars; i++) {
-            createFallingStar(i * 100); // Stagger the start times
+            createFallingStar(i * 100); 
         }
         question.textContent = "i love u too";
         gif.src = "gif.webp";
@@ -56,20 +55,18 @@ document.addEventListener("DOMContentLoaded", ()=>{
         const star = document.createElement('div');
         star.classList.add('star');
         
-        // Random horizontal position and size
         const x = Math.random() * window.innerWidth;
         const size = Math.random() * 40 + 20; // Size between 20px and 60px
         star.style.left = `${x}px`;
         star.style.width = `${size}px`;
         star.style.height = `${size}px`;
-        star.style.animationDelay = `${delay}ms`; // Stagger the animation start
+        star.style.animationDelay = `${delay}ms`; 
     
         document.body.appendChild(star);
     
-        // Remove the star after animation is finished
         setTimeout(() => {
             star.remove();
-        }, 3000 + delay);  // Animation duration plus maximum delay
+        }, 3000 + delay);  
     }
     
 });
